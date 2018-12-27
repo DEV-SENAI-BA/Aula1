@@ -9,6 +9,7 @@ import com.senai.senai.entities.Pessoa;
 
 public class Application {
     public static void main(String[] args) {
+
         Pessoa p1 = new Pessoa("Carlos", Cargo.DESENVOLVEDOR);
         String t1 = new String("98465488");
         Endereco e1 = new Endereco("Rua A","25");
@@ -20,6 +21,7 @@ public class Application {
         p1.getEndereco().getCidade().setEstado(est1);
         p1.setTelefones(t1);
         
+        // Persistindo no BD.
         new PessoaDAO().salvar(p1);
         
         Pessoa p2 = new Pessoa("Carlos", Cargo.DBA);
@@ -34,6 +36,7 @@ public class Application {
         p2.getEndereco().setCidade(c2);
         p2.getEndereco().getCidade().setEstado(est2);
         
+        // Persistindo no BD.
         new PessoaDAO().salvar(p2);
     }
 }
